@@ -570,6 +570,8 @@ public class HW2Tester {
 			boolean cor = exp == res;
 			if(cor) {
 				++score;
+			}else {
+			    System.out.printf("Failed %X, got %X\n", exp, res);
 			}
 			pw.printf("%s(%8X, %d): Expected: %4X Result: %4X Correct: %5b\n", t.name, arg1, arg2, exp, res, cor);
 			pw.flush();

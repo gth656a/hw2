@@ -1,6 +1,6 @@
 public class Scratch {
 	public static void main(String[] args) {
-		getShort(0xDEADBEEF, 1);
+		short foo = getShort(0xDEADBEEF, 1);
 	}
 
 	public static short getShort(int num, int which) {
@@ -8,8 +8,10 @@ public class Scratch {
 			num >>= 16;
 		}
 
-		p((short) (num & 0xFFFF));
-		return (short) (num & 0xFFFF);
+		num &= 0xFFFF;
+		short ret = 0;
+		ret |= num;
+		return ret;
 	}
 
 	public static void d(Object arg) {
